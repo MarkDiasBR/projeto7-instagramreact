@@ -8,10 +8,18 @@ export default function Usuario() {
     function mudarUsuario() {
 
         const novoUsuario = prompt("Digite o nome do novo usuário")
+
+        if (novoUsuario) {
+            setUsuario(novoUsuario)
+        }
+
+    }
+
+    function mudarUrlFoto() {
+
         const novaUrlFoto = prompt("Digite a URL da nova foto")
 
-        if (novoUsuario && novaUrlFoto) {
-            setUsuario(novoUsuario)
+        if (novaUrlFoto) {
             setUrlFoto(novaUrlFoto)
         }
 
@@ -19,7 +27,7 @@ export default function Usuario() {
 
     return (
         <div class="usuario">
-            <img data-test="profile-image" src={urlFoto} alt="imagem de perfil"/>
+            <img data-test="profile-image" onClick={mudarUrlFoto} src={urlFoto} alt="imagem de perfil"/>
             <div class="texto">
                 <span>
                     <strong data-test="name">{usuario}</strong>
