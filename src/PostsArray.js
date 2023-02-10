@@ -24,7 +24,7 @@ const postsArray = [
       "altConteudo": "dog",
       "urlUsuarioQueCurtiu": "http://localhost:3000/assets/img/adorable_animals.svg",
       "usuarioQueCurtiu": "adorable_animals",
-      "curtidas": "99.159"
+      "curtidas": "99.999"
     }
 ]
 
