@@ -176,6 +176,28 @@ body {
   cursor: pointer;
 }
 
+.post .conteudo {
+  position: relative;
+}
+
+.post .conteudo ion-icon {
+  position: absolute;
+  font-size: 0px;
+  color: #FFFFFF;
+
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.2);
+
+}
+
+.post.post-curtido .conteudo ion-icon {
+  font-size: 180px;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+  transition: transform 0.3s, opacity 0s 0.5s, font-size 0s;
+}
+
 .post .conteudo img {
   width: 100%;
 }

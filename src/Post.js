@@ -42,6 +42,12 @@ export default function Post(props) {
 
     }
 
+    function mostrarAnimacaoCurtidaPost() {
+
+
+
+    }
+
     return(
         <div data-test="post" className={classesPost}>
             <div class="topo">
@@ -55,13 +61,14 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo">
+                <ion-icon name="heart"></ion-icon>
                 <img onDoubleClick={addCurtidaClassesPost} src={props.urlConteudo} alt={props.altConteudo}/>
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" onDoubleClick={toggleCurtidasClassePost} name={iconeCoracao}></ion-icon>
+                        <ion-icon data-test="like-post" onClick={toggleCurtidasClassePost} name={iconeCoracao}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
