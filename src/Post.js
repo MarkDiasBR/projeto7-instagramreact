@@ -1,9 +1,9 @@
 export default function Post(props) {
     return(
-        <div class="post">
+        <div data-test="post" class="post">
             <div class="topo">
                 <div class="usuario">
-                    <img src={props.urlUsuario} alt={props.usuario}/>
+                    <img data-test="post-image" src={props.urlUsuario} alt={props.usuario}/>
                     {props.usuario}
                 </div>
                 <div class="acoes">
@@ -18,19 +18,19 @@ export default function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon data-test="like-post" name="heart-outline"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon data-test="save-post" name="bookmark-outline"></ion-icon>
                     </div>
                 </div>
 
                 <div class="curtidas">
                     <img src={props.urlUsuarioQueCurtiu} alt={props.usuarioQueCurtiu}/>
                     <div class="texto">
-                        Curtido por <strong>{props.usuarioQueCurtiu}</strong> e <strong>outras {props.curtidas} pessoas</strong>
+                        Curtido por <strong>{props.usuarioQueCurtiu}</strong> e <strong>outras <span data-test="likes-number">{props.curtidas}</span> pessoas</strong>
                     </div>
                 </div>
             </div>
