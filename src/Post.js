@@ -21,14 +21,19 @@ export default function Post(props) {
     const VALOR_INICIAL_ICONE_CORACAO = "heart-outline"
     const [iconeCoracao, setIconeCoracao] = useState(VALOR_INICIAL_ICONE_CORACAO)
 
+    const VALOR_INICIAL_CURTIDAS = props.curtidas;
+    const [curtidas, setCurtidas] = useState(VALOR_INICIAL_CURTIDAS) 
+
     function toggleCurtidasClassePost() {
         
         if (classesPost === "post") {
             setClassesPost("post post-curtido")
             setIconeCoracao("heart")
+            alteraCurtidas(1)
         } else {
             setClassesPost(VALOR_INICIAL_CLASSES_POST)
             setIconeCoracao(VALOR_INICIAL_ICONE_CORACAO)
+            alteraCurtidas()
         }
 
     }
@@ -38,14 +43,21 @@ export default function Post(props) {
         if (classesPost === "post") {
             setClassesPost("post post-curtido")
             setIconeCoracao("heart")
+            alteraCurtidas(1)
         }
-
     }
 
-    function mostrarAnimacaoCurtidaPost() {
+    function alteraCurtidas(status = 0) {
+        const numeroCurtidas = parseInt(VALOR_INICIAL_CURTIDAS.replace(".", ""))
 
-
-
+        if (status === 1) {
+            let novoNumeroCurtidas = numeroCurtidas + 1;
+            novoNumeroCurtidas = novoNumeroCurtidas.toLocaleString('en-US').replace(/,/g, ".")
+            setCurtidas(novoNumeroCurtidas)
+        } else {
+            setCurtidas(VALOR_INICIAL_CURTIDAS)
+        }
+        
     }
 
     return(
@@ -80,7 +92,7 @@ export default function Post(props) {
                 <div class="curtidas">
                     <img src={props.urlUsuarioQueCurtiu} alt={props.usuarioQueCurtiu}/>
                     <div class="texto">
-                        Curtido por <strong>{props.usuarioQueCurtiu}</strong> e <strong>outras <span data-test="likes-number">{props.curtidas}</span> pessoas</strong>
+                        Curtido por <strong>{props.usuarioQueCurtiu}</strong> e <strong>outras <span data-test="likes-number">{curtidas}</span> pessoas</strong>
                     </div>
                 </div>
             </div>
