@@ -214,7 +214,7 @@ body {
 }
 
 .post.post-curtido .fundo .acoes div:first-child ion-icon:first-child {
-  color: red;
+  color: #FF0000;
 }
 
 .post .fundo .curtidas {

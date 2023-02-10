@@ -74,7 +74,7 @@ export default function Post(props) {
 
             <div class="conteudo">
                 <ion-icon name="heart"></ion-icon>
-                <img onDoubleClick={addCurtidaClassesPost} src={props.urlConteudo} alt={props.altConteudo}/>
+                <img onClick={addCurtidaClassesPost} src={props.urlConteudo} alt={props.altConteudo}/>
             </div>
 
             <div class="fundo">
