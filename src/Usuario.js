@@ -1,19 +1,20 @@
 import { useState } from 'react'
 
 export default function Usuario() {
+
     const [usuario, setUsuario] = useState("catanacomics");
     const [urlFoto, setUrlFoto] = useState("assets/img/catanacomics.svg")
 
     function mudarUsuario() {
-        
+
         const novoUsuario = prompt("Digite o nome do novo usuário")
         const novaUrlFoto = prompt("Digite a URL da nova foto")
-        const falsy = [null, NaN, undefined, false, ""]
 
-        if ( !( falsy.includes(novoUsuario) ) || !( falsy.includes(novaUrlFoto) ) ) {
+        if (novoUsuario && novaUrlFoto) {
             setUsuario(novoUsuario)
-            setUrlFoto(novaUrlFoto) 
+            setUrlFoto(novaUrlFoto)
         }
+
     }
 
     return (
