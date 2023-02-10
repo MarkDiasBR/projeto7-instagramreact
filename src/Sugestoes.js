@@ -9,7 +9,7 @@ export default function Sugestoes() {
                 <div>Ver tudo</div>
             </div>
 
-            {sugestoesArray.map((sugestao) => <Sugestao url={sugestao.url} usuario={sugestao.usuario} razao={sugestao.razao})}
+            {sugestoesArray.map((sugestao) => <Sugestao url={sugestao.url} usuario={sugestao.usuario} razao={sugestao.razao} />)}
         </div>
 
     )
