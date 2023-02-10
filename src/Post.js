@@ -80,7 +80,8 @@ export default function Post(props) {
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" onClick={toggleCurtidasClassePost} name={iconeCoracao}></ion-icon>
+                        <div><ion-icon data-test="like-post" onClick={toggleCurtidasClassePost} name={iconeCoracao}></ion-icon>
+                        </div>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>

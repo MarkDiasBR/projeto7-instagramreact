@@ -15,7 +15,7 @@ const postsArray = [
       "altConteudo": "mt-03",
       "urlUsuarioQueCurtiu": "http://localhost:3000/assets/img/9gag.svg",
       "usuarioQueCurtiu": "9gag",
-      "curtidas": "95.347"
+      "curtidas": "999.999"
     },
     {
       "urlUsuario": "http://localhost:3000/assets/img/barked.svg",
@@ -24,7 +24,7 @@ const postsArray = [
       "altConteudo": "dog",
       "urlUsuarioQueCurtiu": "http://localhost:3000/assets/img/adorable_animals.svg",
       "usuarioQueCurtiu": "adorable_animals",
-      "curtidas": "99.999"
+      "curtidas": "200.541"
     }
 ]
 
