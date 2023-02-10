@@ -1,4 +1,20 @@
+import { useState } from "react"
+
 export default function Post(props) {
+
+    const VALOR_INICIAL_ICONE_SALVAR = "bookmark-outline"
+    const [iconeSalvar, setIconeSalvar] = useState(VALOR_INICIAL_ICONE_SALVAR)
+
+    function mudarIconeSalvar() {
+
+        if (iconeSalvar === VALOR_INICIAL_ICONE_SALVAR) {
+            setIconeSalvar("bookmark")
+        } else {
+            setIconeSalvar(VALOR_INICIAL_ICONE_SALVAR)
+        }
+
+    }
+    
     return(
         <div data-test="post" class="post">
             <div class="topo">
@@ -23,7 +39,7 @@ export default function Post(props) {
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon data-test="save-post" name="bookmark-outline"></ion-icon>
+                        <ion-icon data-test="save-post" onClick={mudarIconeSalvar} name={iconeSalvar}></ion-icon>
                     </div>
                 </div>
 
