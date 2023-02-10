@@ -15,8 +15,35 @@ export default function Post(props) {
 
     }
     
+    const VALOR_INICIAL_CLASSES_POST = "post"
+    const [classesPost, setClassesPost] = useState(VALOR_INICIAL_CLASSES_POST)
+
+    const VALOR_INICIAL_ICONE_CORACAO = "heart-outline"
+    const [iconeCoracao, setIconeCoracao] = useState(VALOR_INICIAL_ICONE_CORACAO)
+
+    function toggleCurtidasClassePost() {
+        
+        if (classesPost === "post") {
+            setClassesPost("post post-curtido")
+            setIconeCoracao("heart")
+        } else {
+            setClassesPost(VALOR_INICIAL_CLASSES_POST)
+            setIconeCoracao(VALOR_INICIAL_ICONE_CORACAO)
+        }
+
+    }
+    
+    function addCurtidaClassesPost() {
+
+        if (classesPost === "post") {
+            setClassesPost("post post-curtido")
+            setIconeCoracao("heart")
+        }
+
+    }
+
     return(
-        <div data-test="post" class="post">
+        <div data-test="post" className={classesPost}>
             <div class="topo">
                 <div class="usuario">
                     <img data-test="post-image" src={props.urlUsuario} alt={props.usuario}/>
@@ -28,13 +55,13 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.urlConteudo} alt={props.altConteudo}/>
+                <img onDoubleClick={addCurtidaClassesPost} src={props.urlConteudo} alt={props.altConteudo}/>
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon data-test="like-post" name="heart-outline"></ion-icon>
+                        <ion-icon data-test="like-post" onDoubleClick={toggleCurtidasClassePost} name={iconeCoracao}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>

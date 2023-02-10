@@ -191,6 +191,10 @@ body {
   margin-right: 6px;
 }
 
+.post.post-curtido .fundo .acoes div:first-child ion-icon:first-child {
+  color: red;
+}
+
 .post .fundo .curtidas {
   display: flex;
   align-items: center;
